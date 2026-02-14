@@ -1,0 +1,457 @@
+/* dashboard.css - Professional Mobile Dashboard with Sticky Header & Separate Welcome Card */
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dashboard-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #1e293b;
+  background-color: #f8fafc;
+}
+
+/* ===== STICKY HEADER ===== */
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background-color: #ffffff;
+  padding: 0.6rem 0;
+  margin-bottom: 0.8rem;
+  border-bottom: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0 0 16px 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-left: 0.2rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding-right: 0.2rem;
+}
+
+.header-icon {
+  font-size: 1.2rem;
+  cursor: default;
+}
+
+.header-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+}
+
+/* ===== WELCOME CARD (separate container) ===== */
+.welcome-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.2rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+  color: white;
+}
+
+.welcome-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0 0 0.2rem 0;
+  letter-spacing: -0.01em;
+  color: white;
+}
+
+.welcome-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
+  color: rgba(255,255,255,0.95);
+}
+
+/* ===== ACCOUNT OVERVIEW ===== */
+.dashboard-overview {
+  margin-bottom: 1.2rem;
+}
+
+.action-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem 0;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+/* Countdown Timer */
+.countdown-container {
+  background-color: #ffffff;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  border: none;
+}
+
+.countdown-title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+/* Overview Grid */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.overview-card {
+  background-color: #ffffff;
+  padding: 0.7rem 0.6rem;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.overview-card:active {
+  transform: scale(0.98);
+}
+
+.overview-card.primary {
+  background: linear-gradient(145deg, #eef2ff, #e6eaff);
+}
+
+.overview-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  color: #64748b;
+  margin-bottom: 0.2rem;
+}
+
+.overview-value {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.3;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.4rem;
+}
+
+.zar-value {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 0.1rem 0.3rem;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+/* Actions Section */
+.dashboard-actions {
+  margin-bottom: 1.2rem;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.8rem;
+}
+
+.action-card {
+  background-color: #ffffff;
+  padding: 0.9rem 0.8rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+/* Buttons - small and elegant */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.2;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.btn:hover {
+  background-color: #e2e8f0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: white;
+}
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-success {
+  background-color: #16a34a;
+  color: white;
+}
+.btn-success:hover {
+  background-color: #15803d;
+}
+
+.btn-warning {
+  background-color: #f59e0b;
+  color: white;
+}
+.btn-warning:hover {
+  background-color: #d97706;
+}
+
+.btn-secondary {
+  background-color: #94a3b8;
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: #64748b;
+}
+
+.messages-toggle {
+  width: 100%;
+  justify-content: flex-start;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  margin-top: 0.4rem;
+}
+
+/* Messages Section */
+.messages-section {
+  margin-bottom: 1rem;
+}
+
+.messages-content {
+  margin-top: 1rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+}
+
+.message-form h4,
+.messages-list h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 0.6rem 0;
+  color: #0f172a;
+}
+
+.form-group {
+  margin-bottom: 0.8rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.2px;
+}
+
+.form-textarea {
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  resize: vertical;
+  transition: border 0.1s;
+}
+.form-textarea:focus {
+  outline: none;
+  border-color: #94a3b8;
+  background-color: #ffffff;
+}
+
+.message-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.message-status {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  background-color: #f1f5f9;
+}
+.status-success {
+  background-color: #dcfce7;
+  color: #166534;
+}
+.status-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Messages List */
+.messages-list {
+  margin-top: 1rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 1.2rem 0.5rem;
+  background-color: #f8fafc;
+  border-radius: 16px;
+}
+.empty-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.3rem;
+}
+.empty-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #334155;
+}
+.empty-subtext {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.message-item {
+  background-color: #f8fafc;
+  padding: 0.8rem;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+  border: none;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.01);
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.3rem;
+  font-size: 0.75rem;
+}
+
+.message-sender {
+  font-weight: 600;
+}
+.message-admin {
+  color: #2563eb;
+  background: #dbeafe;
+  padding: 0.1rem 0.5rem;
+  border-radius: 30px;
+}
+.message-you {
+  color: #16a34a;
+  background: #dcfce7;
+  padding: 0.1rem 0.5rem;
+  border-radius: 30px;
+}
+
+.message-time {
+  color: #64748b;
+  font-size: 0.7rem;
+}
+
+.message-subject {
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 0.3rem;
+  color: #0f172a;
+}
+
+.message-body {
+  font-size: 0.8rem;
+  color: #334155;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+/* Ensure no borders or lines anywhere */
+hr, .divider, [class*="border"] {
+  display: none;
+}
+
+/* Focus outline */
+:focus-visible {
+  outline: 2px solid #94a3b8;
+  outline-offset: 2px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 360px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .action-buttons {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+  .welcome-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Additional polish */
+.overview-card, .action-card, .message-item {
+  transition: box-shadow 0.2s;
+}
+.overview-card:hover, .action-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.02);
+}

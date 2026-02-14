@@ -1,0 +1,132 @@
+/* src/styles/successWithdrawals.css */
+
+/* Wrapper for the entire withdrawals section */
+.withdrawals-wrapper {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Header style */
+.recent-withdrawals-header {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+  border-left: 5px solid #3b82f6; /* Accent line */
+  padding-left: 1rem;
+}
+
+/* Carousel container – establishes stacking context for absolute items */
+.text-carousel {
+  position: relative;
+  min-height: 100px; /* Adjust based on content height */
+  width: 100%;
+  overflow: hidden; /* Prevents overflow during animation */
+}
+
+/* Each carousel item – absolutely positioned, faded by default */
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  background: #f8fafc;
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid #edf2f7;
+}
+
+/* Active item – fully visible */
+.carousel-item.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative; /* Take it out of absolute flow so it defines container height? No, keep absolute but visible */
+  /* Since all items are absolute, the container height must be set explicitly or by tallest item.
+     We'll rely on min-height and let content define height, but with absolute items, the container won't expand.
+     So we need to set height based on active item. We can use JavaScript to adjust container height,
+     or we can use a different approach: hide inactive with display:none and use fade via keyframes? 
+     For simplicity, we'll keep absolute and ensure container has a fixed height that accommodates content.
+     We'll estimate a reasonable min-height and let the active item's height be used.
+     Alternatively, we can measure and set height in JS, but that's overkill. We'll use a flex column approach instead.
+     Actually, better to avoid absolute and use a single visible item with conditional rendering? No, we need the list for carousel effect.
+     Let's adjust: Instead of absolute, we can use display: flex, overflow: hidden, and transform translate. But that's more complex.
+     For a simple fade, we can keep absolute and set container height to the height of the active item using JS, but that's not pure CSS.
+     However, we can set a fixed height based on typical content. Let's assume each item is about 80px tall.
+     We'll set .text-carousel height: 90px; and ensure items are vertically aligned.
+     This is a common pattern for testimonial carousels. We'll go with that.
+  */
+}
+
+/* Top row: name and amount */
+.item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+}
+
+/* Name style */
+.item-name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+/* Amount style */
+.item-amount {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #10b981; /* Green for positive withdrawal amounts */
+  background: #e6f7f0;
+  padding: 0.2rem 0.8rem;
+  border-radius: 30px;
+  letter-spacing: -0.01em;
+}
+
+/* Time style (muted) */
+.item-time {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+}
+
+/* Optional: small modifier already present */
+.small {
+  font-size: 0.8rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .withdrawals-wrapper {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .recent-withdrawals-header {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-item {
+    padding: 0.75rem 1rem;
+  }
+
+  .item-name {
+    font-size: 1rem;
+  }
+
+  .item-amount {
+    font-size: 1.1rem;
+  }
+}

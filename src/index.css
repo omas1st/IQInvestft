@@ -1,0 +1,28 @@
+/* src/index.css — existing base styles plus sticky footer layout */
+
+/* Your existing styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f3f4f6;
+  color: #0f172a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: #0ea5b7;
+}
+
+/* ===== NEW: Sticky footer layout ===== */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;  /* Full viewport height */
+}
+
+.main-content {
+  flex: 1;  /* Takes remaining space, pushes footer down */
+  /* Optional: add padding if you want spacing around the content */
+  padding-bottom: 40px; /* moved from inline style */
+}
