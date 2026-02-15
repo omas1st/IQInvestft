@@ -2,7 +2,6 @@ import React from 'react'
 import '../styles/footer.css'
 
 export default function Footer(){
-  const currentYear = new Date().getFullYear()
 
   // Public files are served from PUBLIC_URL; fallback to '' if not set
   const logoPath = (process.env && process.env.PUBLIC_URL ? process.env.PUBLIC_URL : '') + '/logo192.png'
@@ -20,7 +19,7 @@ export default function Footer(){
           <div className="footer-info">
             <p className="footer-tagline">Professional Mining Investment Platform</p>
             <div className="footer-meta">
-              <span className="footer-copyright">© {currentYear} IQ Miners. All rights reserved.</span>
+              <span className="footer-copyright">© {2013} IQ Miners. All rights reserved.</span>
             </div>
           </div>
         </div>
